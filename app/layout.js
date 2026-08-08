@@ -1,4 +1,6 @@
 import "./globals.css";
+import AppChrome from "@/components/AppChrome";
+import FadeObserver from "@/components/FadeObserver";
 
 export const metadata = {
   title: "MY PORTFOLIO // CLASSIFIED DOSSIER",
@@ -16,7 +18,18 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="page-shell">
+          {children}
+          <footer className="footer-bar">
+            <span className="footer-stage">&#9679; Portfolio still in progress</span>
+            <span className="footer-copy">Developer: Earl Abella 2026</span>
+            <span className="footer-offer">Happy to work on your future project &#9654;</span>
+          </footer>
+        </div>
+        <AppChrome />
+        <FadeObserver />
+      </body>
     </html>
   );
 }
