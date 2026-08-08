@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <AppChrome />
         <div className="page-shell">
           {children}
           <footer className="footer-bar">
@@ -27,7 +28,6 @@ export default function RootLayout({ children }) {
             <span className="footer-offer">Happy to work on your future project &#9654;</span>
           </footer>
         </div>
-        <AppChrome />
         <FadeObserver />
       </body>
     </html>
