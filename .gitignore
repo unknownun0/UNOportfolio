@@ -16,3 +16,10 @@ yarn-error.log*
 
 # env
 .env*
+
+# uncommitted site media (only the images used by the site are tracked)
+/public/*
+!/public/profile.png
+!/public/b2f9aff1-a8d6-4d9c-81d1-432ebd056f0a.jpg
+!/public/cc6762ed-9488-47fd-9a9e-3d2aa7bac23b.jpg
+!/public/7c3dc184-8336-4ed0-b41f-18c41e9fe09c.jpg

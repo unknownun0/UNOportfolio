@@ -1,11 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import { DATA } from "@/lib/data";
 
 function ProfileImage() {
   return (
     <div className="profile-img">
-      <span className="img-label">IMAGE PROFILE</span>
+      <Image
+        src={DATA.profile.photo}
+        alt="Profile"
+        fill
+        sizes="(max-width: 1180px) 50vw, 20vw"
+        style={{ objectFit: "cover" }}
+        priority
+      />
     </div>
   );
 }
@@ -68,10 +76,14 @@ function CenterInfo() {
   );
 }
 
-function ThumbRow({ label, title, meta, onDetail }) {
+function ThumbRow({ image, title, meta, onDetail }) {
   return (
     <div className="row">
-      <div className="thumb">{label}</div>
+      <div className="thumb">
+        {image ? (
+          <Image src={image} alt={title} fill sizes="58px" style={{ objectFit: "cover" }} />
+        ) : null}
+      </div>
       <div className="row-body">
         <div className="row-title">{title}</div>
         <div className="row-sub">{meta}</div>
@@ -91,7 +103,7 @@ function CertProjects() {
         {DATA.certifications.map((c, i) => (
           <ThumbRow
             key={c.title}
-            label={`IMG CERT ${i + 1}`}
+            image={c.image}
             title={c.title}
             meta={c.meta}
             onDetail={() => alertDetail(c.title)}
@@ -103,7 +115,6 @@ function CertProjects() {
         {DATA.projects.map((pj, i) => (
           <ThumbRow
             key={pj.title}
-            label={`IMG PROJ ${i + 1}`}
             title={pj.title}
             meta={pj.meta}
             onDetail={() => alertDetail(pj.title)}

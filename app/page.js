@@ -5,7 +5,6 @@ import TopNav from "@/components/TopNav";
 import DossierPanel from "@/components/DossierPanel";
 import SkillsStrip from "@/components/SkillsStrip";
 import FooterBar from "@/components/FooterBar";
-import MobileApp from "@/components/MobileApp";
 import { DATA } from "@/lib/data";
 
 function downloadResume() {
@@ -65,7 +64,6 @@ export default function Page() {
         </main>
         <FooterBar />
       </div>
-      <MobileApp onResume={downloadResume} />
     </>
   );
 }
